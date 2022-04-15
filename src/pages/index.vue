@@ -31,13 +31,13 @@ import CostLabel from "../components/CostLabel.vue";
 }
 
 .page-title h2 {
-  width: 50%;
+  width: 8rem;
   text-align: left;
   line-height: 2rem;
 }
 
 .page-title div {
-  width: 50%;
+  width: calc(100% - 8rem);
   display: flex;
   align-items: center;
   justify-content: flex-end;
