@@ -69,10 +69,15 @@ h5 {
 }
 
 .ico {
+  width: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   margin-right: 1rem;
+}
+
+.value {
+  min-width: 6rem;
 }
 </style>
