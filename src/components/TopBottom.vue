@@ -98,6 +98,7 @@ h3 {
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 12px 1px var(--based);
+  border-top: 2px solid var(--blue);
 }
 
 table {

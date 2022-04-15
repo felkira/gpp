@@ -58,6 +58,7 @@ export default {
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 12px 1px var(--based);
+  border-top: 2px solid var(--blue);
   display: flex;
   flex-direction: row;
   align-items: center;

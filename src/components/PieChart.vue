@@ -56,6 +56,7 @@ export default {
   background-color: var(--light);
   border-radius: 0.5rem;
   box-shadow: 0 1px 12px 1px var(--based);
+  border-top: 2px solid var(--blue);
   color: var(--general);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));

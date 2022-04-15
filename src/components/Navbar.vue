@@ -34,7 +34,7 @@
   padding: 0 1.5rem;
   justify-content: flex-end;
   background-color: var(--light);
-  box-shadow: 0 1px 10px var(--based);
+  box-shadow: 3px 1px 10px var(--based);
 }
 
 .bell {
