@@ -1,5 +1,6 @@
 <script>
 import Vue3ChartJs from "@j-t-mcc/vue3-chartjs";
+import { ref } from "vue";
 
 export default {
   name: "App",
@@ -7,6 +8,7 @@ export default {
     Vue3ChartJs,
   },
   setup() {
+    const chartRef = ref(null);
     const lineChart = {
       type: "line",
       data: {
@@ -32,8 +34,18 @@ export default {
       },
     };
 
+    const exportChart = () => {
+      let a = document.createElement("a");
+      a.href = chartRef.value.chartJSState.chart.toBase64Image();
+      a.download = "image-export.png";
+      a.click();
+      a = null;
+    };
+
     return {
+      chartRef,
       lineChart,
+      exportChart,
     };
   },
 };
@@ -43,8 +55,9 @@ export default {
   <div class="section">
     <div class="card">
       <h3>Profit-Loss</h3>
+      <button type="submit" @click="exportChart">Export Chart as PNG</button>
       <div class="line-container">
-        <vue3-chart-js v-bind="{ ...lineChart }" class="line" />
+        <vue3-chart-js ref="chartRef" v-bind="{ ...lineChart }" class="line" />
       </div>
     </div>
   </div>
@@ -80,5 +93,21 @@ h3 {
 .line {
   max-width: 60vw;
   max-height: 40vh;
+}
+
+button {
+  background-color: var(--blue);
+  padding: 0.5rem 1.5rem;
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: 2px solid var(--base);
+  top: 0;
+  right: 0;
+}
+
+button:hover {
+  filter: opacity(95%);
 }
 </style>
