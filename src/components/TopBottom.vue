@@ -8,32 +8,8 @@ export default {
         { name: "bagus", value: 232 },
         { name: "baguss", value: 145 },
         { name: "bagusss", value: 453 },
-        { name: "bagussss", value: 96 },
-        { name: "bagusssss majajh aznnvxasv", value: 321 },
-        { name: "bagussssss", value: 45 },
-        { name: "bagusssssss", value: 68 },
-        { name: "bagussssssss", value: 31277557855 },
-        { name: "bagusssssssss", value: 222 },
       ],
     };
-  },
-  computed: {
-    topProject() {
-      function compare(a, b) {
-        if (a.value < b.value) return 1;
-        if (a.value > b.value) return -1;
-        return 0;
-      }
-      return this.projects.sort(compare);
-    },
-    bottomProject() {
-      function compare(a, b) {
-        if (a.value < b.value) return -1;
-        if (a.value > b.value) return 1;
-        return 0;
-      }
-      return this.projects.sort(compare);
-    },
   },
 };
 </script>
@@ -50,7 +26,7 @@ export default {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="project in topProject.slice(0, 5)" :key="project.name">
+          <tr v-for="project in projects" :key="project.name">
             <td class="project">{{ project.name }}</td>
             <td class="amount">{{ project.value }}</td>
           </tr>
@@ -67,7 +43,7 @@ export default {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="project in bottomProject.slice(0, 5)" :key="project.name">
+          <tr v-for="project in projects" :key="project.name">
             <td class="project">{{ project.name }}</td>
             <td class="amount">{{ project.value }}</td>
           </tr>
